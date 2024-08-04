@@ -1,6 +1,6 @@
 from river.metrics import Accuracy
 from river.tree import HoeffdingTreeClassifier
-from pfi_with_seeds.ipfi import IPFI
+from reproducible_ipfi.ipfi import IPFI
 from ixai.utils.wrappers import RiverWrapper
 from ixai.visualization import FeatureImportancePlotter
 
