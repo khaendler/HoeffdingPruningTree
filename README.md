@@ -2,7 +2,7 @@
 
 ## Overview
 This project contains the Hoeffding Pruning Tree (HPT), an extension of the Hoeffding Tree that incorporates incremental
-Permutation Feature Importance (PFI) to prune the tree effectively. Pruning can be executed using two distinct
+Permutation Feature Importance (iPFI) to prune the tree effectively. Pruning can be executed using two distinct
 strategies: complete and selective, both of which utilize feature importance values to determine which branches
 to prune. HPT aims to reduce the tree size and enhance transparency. This work is presented as the Bachelor's thesis
 of K. Händler.
