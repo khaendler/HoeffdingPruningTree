@@ -5,8 +5,9 @@ from river.datasets.synth import ConceptDriftStream
 
 class GradualConceptDriftStream(ConceptDriftStream):
     """Custom ConceptDriftStream with gradual concept drift between two stream generators.
-    This generator ensures that the feature values remain consistent, and only the target
-    values transition from one generator to the other over the specified width.
+    This generator ensures that if both generators produce the same features values,
+    they remain consistent, and only the target values transition from one generator
+    to the other over the specified width.
 
     A stream generator that adds concept drift or change by joining two
     streams. This is done by building a weighted combination of two pure
