@@ -16,16 +16,18 @@ of K. Händler.
 - A fixed version of the Extremely Fast Hoeffding Tree from river version 0.20.0.
 
 The implementation is based on [river](https://github.com/online-ml/river)
-and [ixai](https://github.com/mmschlk/iXAI).
+and [ixai](https://github.com/mmschlk/iXAI). The Hoeffding Pruning Tree is implemented as a Hoeffding tree classifier 
+and should support all river functionalities.
 
 ## Installation
 The Hoeffding Pruning Tree requires **Python 3.8 or above**. Installation of the requirements can be done via `pip`:
 ```sh
 pip install -r requirements.txt 
 ```
-**Note**: The project works on **river version 0.16.0**. Later versions may not be supported with `ixai`.
+**Note**: The project works with **river version 0.16.0**. Later versions may not be supported with `ixai`.
 
 ## Example Code
+The Hoeffding Pruning Tree should support all functionalities of the Hoeffding tree classifier.
 ```python
 >>> from river.metrics import RollingROCAUC
 
@@ -52,4 +54,4 @@ pip install -r requirements.txt
 ```
 
 ## Abstract of my Bachelor's Thesis
-tba
+...
