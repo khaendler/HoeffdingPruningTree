@@ -15,7 +15,7 @@ from pruner.selective_pruner import SelectivePruner
 class HoeffdingPruningTree(HoeffdingTreeClassifier):
     """Hoeffding Pruning Tree using the VFDT classifier with incremental PFI to prune the tree.
 
-    Note: This  works with river versions 0.16.0. Later versions may not be supported.
+    Note: This works with river versions 0.16.0. Later versions may not be supported.
 
     Parameters
     ----------
@@ -151,7 +151,7 @@ class HoeffdingPruningTree(HoeffdingTreeClassifier):
             raise ValueError(f"Invalid pruner type: {pruner}. Valid options are 'selective' or 'complete'.")
 
     def learn_one(self, x, y, *, sample_weight=1.0):
-        # Initializes the incremental PFI instance.
+        # Initialize the incremental PFI instance.
         if self.incremental_pfi is None:
             self.feature_names = list(x.keys())
             self.important_features = self.feature_names
@@ -160,7 +160,7 @@ class HoeffdingPruningTree(HoeffdingTreeClassifier):
 
         self._update_ipfi(x, y)
 
-        # Prunes the tree if the set of important features has changed.
+        # Prune the tree if the set of important features has changed.
         if self.last_important_features != set(self.important_features):
             self.pruner.prune_tree()
             self._update_leaf_counts()
@@ -190,7 +190,7 @@ class HoeffdingPruningTree(HoeffdingTreeClassifier):
         # explaining
         inc_fi_pfi = self.incremental_pfi.explain_one(x, y)
 
-        # updates visualizer
+        # update visualizer
         self.pfi_plotter.update(inc_fi_pfi)
 
         # Check if any feature's importance value meets or exceeds the threshold.
