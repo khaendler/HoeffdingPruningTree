@@ -27,7 +27,6 @@ pip install -r requirements.txt
 **Note**: The project works with **river version 0.16.0**. Later versions may not be supported with `ixai`.
 
 ## Example Code
-The Hoeffding Pruning Tree should support all functionalities of the Hoeffding tree classifier.
 ```python
 >>> from river.metrics import RollingROCAUC
 
