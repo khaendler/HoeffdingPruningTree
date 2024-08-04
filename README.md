@@ -24,7 +24,7 @@ The Hoeffding Pruning Tree requires **Python 3.8 or above**. Installation of the
 ```sh
 pip install -r requirements.txt 
 ```
-**Note**: The project works with **river version 0.16.0**. Later versions may not be supported with `ixai`.
+**Note**: The project works with **river version 0.16.0**. Later versions may not be supported by ixai.
 
 ## Example Code
 ```python
