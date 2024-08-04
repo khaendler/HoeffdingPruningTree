@@ -15,7 +15,7 @@ from pruner.selective_pruner import SelectivePruner
 class HoeffdingPruningTree(HoeffdingTreeClassifier):
     """Hoeffding Pruning Tree using the VFDT classifier with incremental PFI to prune the tree.
 
-    Warning: This does not work with river versions above 0.16.0.
+    Note: This  works with river versions 0.16.0. Later versions may not be supported.
 
     Parameters
     ----------

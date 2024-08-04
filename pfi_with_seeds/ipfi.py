@@ -18,7 +18,7 @@ from pfi_with_seeds.reservoir import GeometricReservoirStorage, UniformReservoir
 class IPFI(IncrementalPFI):
     """Incremental PFI Explainer using a seed.
 
-    Warning: This does not work with river versions above 0.16.0.
+    Note: This  works with river versions 0.16.0. Later versions may not be supported.
 
     Computes PFI importance values incrementally by applying exponential smoothing.
     For each input instance tuple x_i, y_i one update of the explanation procedure is performed.
