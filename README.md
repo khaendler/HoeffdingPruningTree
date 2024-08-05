@@ -11,7 +11,7 @@ of K. Händler.
 - Hoeffding Pruning Tree
   - Complete and selective pruning strategy
 - Incremental PFI with seeds for reproducibility
-  - Only for geometric sampling and marginal imputer
+  - Only for the sampling strategies and marginal imputer
 - Modified versions of Agrawal and SEA generators to specify concept drifts.
 - A fixed version of the Extremely Fast Hoeffding Tree from river version 0.20.0.
 
