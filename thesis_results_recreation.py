@@ -1,4 +1,4 @@
-from data.utils import load_datasets
+from data.utils import load_thesis_datasets
 from utils.evaluate_multiple import evaluate_multiple
 
 from tree.EFDT import EFDT
@@ -12,7 +12,7 @@ num_instances = 1000000
 seeds = [40, 41, 42, 43, 44]
 results = {"seed40": {}, "seed41": {}, "seed42": {}, "seed43": {}, "seed44": {}}
 for seed in seeds:
-    datasets = load_datasets(num_instances=num_instances, pertubation=0.2, seed=seed)
+    datasets = load_thesis_datasets(num_instances=num_instances, pertubation=0.2, seed=seed)
     datasets = [(datasets[0], "agrawal_base"),
                 (datasets[1], "agrawal_sudden"),
                 (datasets[2], "agrawal_gradual"),

@@ -14,7 +14,7 @@ def salary_drift(num_instances: int, instance_idx: int, rng: np.random.RandomSta
     return 20000 + 130000 * rng.random()
 
 
-def load_datasets(num_instances=1000000, pertubation=0, seed=None):
+def load_thesis_datasets(num_instances=1000000, pertubation=0, seed=None):
     base = CustomAgrawal(classification_function=1, perturbation=pertubation, seed=seed)
     sudden = SuddenDriftAgrawal(classification_function=1, drift_classification_function=2,
                                 drift_instance=int(num_instances/2), perturbation=pertubation, seed=seed)
