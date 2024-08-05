@@ -11,8 +11,8 @@ from ixai.utils.tracker.base import Tracker
 from ixai.utils.tracker import MultiValueTracker, WelfordTracker, ExponentialSmoothingTracker
 from ixai.utils.validators.loss import validate_loss_function
 
-from pfi_with_seeds.marginal_imputer import MarginalImputer
-from pfi_with_seeds.reservoir import GeometricReservoirStorage, UniformReservoirStorage
+from reproducible_ipfi.marginal_imputer import MarginalImputer
+from reproducible_ipfi.reservoir import GeometricReservoirStorage, UniformReservoirStorage
 
 
 class IPFI(IncrementalPFI):
