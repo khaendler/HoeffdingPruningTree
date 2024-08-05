@@ -36,7 +36,7 @@ def load_datasets(num_instances=1000000, pertubation=0, seed=None):
     mixed = GradualConceptDriftStream(_sudden1, _agrawal2, seed=seed, position=int(num_instances * 0.75),
                                       width=int(num_instances/10))
 
-    sea = SuddenDriftSEA(variant=1, drift_variant=2, drift_instance=500000, noise=pertubation, seed=seed)
+    sea = SuddenDriftSEA(variant=1, drift_variant=2, drift_instance=int(num_instances/2), noise=pertubation, seed=seed)
     hyperplane = Hyperplane(n_features=20, n_drift_features=10, mag_change=0.001, noise_percentage=pertubation, seed=seed)
 
     datasets = [base, sudden, gradual, feature, recurring, mixed, sea, hyperplane]
