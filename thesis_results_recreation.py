@@ -24,7 +24,6 @@ for seed in seeds:
                 ]
 
     for data, data_name in datasets:
-        nominal_attributes = None
 
         ht = HoeffdingTreeClassifier()
         efdt = EFDT()
