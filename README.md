@@ -53,4 +53,13 @@ pip install -r requirements.txt
 ```
 
 ## Abstract of my Bachelor's Thesis
-...
+Explainable artificial intelligence has gained significant attention in recent
+years, with decision trees playing a key role due to their inherent interpretability. Hoeffding trees are particularly popular for data streams where efficiency
+and transparency are crucial. However, as data streams can be unbounded,
+Hoeffding trees tend to grow indefinitely, increasing complexity. An approach
+to explain complex models, is to use model-agnostic methods like incremental permutation feature importance (iPFI). IPFI provides insight into feature
+impact without being tied to a specific model. This thesis introduces the Hoeffding pruning tree (HPT), a novel approach that integrates Hoeffding trees
+with iPFI to manage unbounded growth and improve adaptability in nonstationary data streams. HPT uses feature importance to transparently prune
+the tree, employing either a complete or selective pruning strategy to simplify the pruning process. Experiments show that HPT achieves performance
+comparable to state-of-the-art adaptive Hoeffding trees, while maintaining a
+lower node count through transparent pruning, effectively balancing interpretability and adaptability in data stream processing.
