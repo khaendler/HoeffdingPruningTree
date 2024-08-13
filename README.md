@@ -27,29 +27,27 @@ pip install -r requirements.txt
 **Note**: The project works with **river version 0.16.0**. Later versions may not be supported by ixai.
 
 ## Example Code
+The following code shows how to evaluate multiple models.
 ```python
->>> from river.metrics import RollingROCAUC
-
 >>> from data.modified_agrawal import SuddenDriftAgrawal
+>>> from utils.evaluate_multiple import evaluate_multiple
+
 >>> from tree.hoeffding_pruning_tree import HoeffdingPruningTree
+>>> from river.tree.hoeffding_tree_classifier import HoeffdingTreeClassifier
 
->>> dataset = SuddenDriftAgrawal(drift_instance=25000)
->>> model = HoeffdingPruningTree(importance_threshold=0.02, pruner="complete")
 
->>> metric = RollingROCAUC()
->>> for i, (x, y) in enumerate(dataset.take(50000), start=1):
-...    y_pred = model.predict_proba_one(x)     # predicting
-...    metric.update(y, y_pred)                # updating metric
-...    model.learn_one(x, y)                   # learning
-...
-...    if i % 10000 == 0:
-...        print(f"{i}: Accuracy: {metric.get():.3f}, PFI: {model.importance_values}")
-        
-10000: Accuracy: 0.798, PFI: {'salary': 0.218, 'age': 0.031, 'elevel': 0.001, 'commission': 0.003, 'loan': 0.002, 'hvalue': -0.002, 'zipcode': 0.002, 'car': 0.006, 'hyears': 0.002}
-20000: Accuracy: 0.905, PFI: {'salary': 0.290, 'age': 0.179, 'elevel': -0.001, 'commission': 0.026, 'loan': -0.001, 'hvalue': -0.001, 'zipcode': -0.001, 'car': 0.001, 'hyears': 0.002}
-30000: Accuracy: 0.657, PFI: {'salary': 0.002, 'age': 0.062, 'elevel': 0.111, 'commission': -0.001, 'loan': 0.001, 'hvalue': 0.001, 'zipcode': 0.000, 'car': 0.004, 'hyears': 0.004}
-40000: Accuracy: 1.000, PFI: {'salary': -0.000, 'age': 0.457, 'elevel': 0.455, 'commission': -0.000, 'loan': -0.000, 'hvalue': 0.000, 'zipcode': -0.001, 'car': -0.001, 'hyears': 0.000}
-50000: Accuracy: 1.000, PFI: {'salary': -0.000, 'age': 0.442, 'elevel': 0.461, 'commission': -0.000, 'loan': -0.000, 'hvalue': 0.000, 'zipcode': -0.000, 'car': -0.000, 'hyears': 0.000}
+>>> num_instances = 200000
+>>> dataset = SuddenDriftAgrawal(drift_instance=10000)
+>>> data_name = "SuddenDriftAgrawal"
+
+>>> ht = HoeffdingTreeClassifier()
+>>> hpt_cpl_02 = HoeffdingPruningTree(importance_threshold=0.02, pruner="complete")
+
+>>> models = [ht, hpt_cpl_02]
+>>> model_names = ["HT", "HPT_cpl_0.02"]
+
+# Training and evaluating.
+>>> results = evaluate_multiple(models, dataset, model_names, data_name, num_instances)
 ```
 
 ## Abstract of my Bachelor's Thesis
