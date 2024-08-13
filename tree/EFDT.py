@@ -6,7 +6,7 @@ from river.tree.extremely_fast_decision_tree import ExtremelyFastDecisionTreeCla
 class EFDT(ExtremelyFastDecisionTreeClassifier):
     """Fixed version of the Extremely Fast Decision Tree classifier from river version 0.20.0.
     In earlier versions, EFDT had a bug where the split re-evaluation failed when the current branch's
-    feature was not available as a split option. The fix also enablke the tree to pre-prune a leaf via
+    feature was not available as a split option. The fix also enable the tree to pre-prune a leaf via
     the tie-breaking mechanism.
 
     Also referred to as Hoeffding AnyTime Tree (HATT) classifier.
