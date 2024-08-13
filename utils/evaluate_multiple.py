@@ -9,6 +9,16 @@ pd.set_option('display.max_rows', None)
 
 
 def evaluate_multiple(models, data, model_names, data_name, num_instances):
+    """ Trains and evaluate multiple models at the same time.
+
+    :param models: A list of river classification models.
+    :param data: The dataset.
+    :param model_names: A list with the model names.
+    :param data_name: The name of the dataset.
+    :param num_instances: The number of instances to train the models.
+    :return: A dict containing the number of nodes, metric_values and learning times for each model for each instance in the form of
+    {"n_nodes": {model_name1: [...], ...}, "metric_values": ***, "learn_times": ***}.
+    """
     print(f"Starting training {model_names} on {data_name} with seed={data.seed} for {num_instances} instances:\n")
     learn_times = {model_name: [] for model_name in model_names}
     n_nodes = {model_name: [] for model_name in model_names}
