@@ -29,8 +29,8 @@ pip install -r requirements.txt
 ## Example Code
 The following code shows how to evaluate multiple models.
 ```python
->>> from data.modified_agrawal import SuddenDriftAgrawal
 >>> from utils.evaluate_multiple import evaluate_multiple
+>>> from data.modified_agrawal import SuddenDriftAgrawal
 
 >>> from tree.hoeffding_pruning_tree import HoeffdingPruningTree
 >>> from river.tree.hoeffding_tree_classifier import HoeffdingTreeClassifier
