@@ -89,7 +89,7 @@ class HoeffdingPruningTree(HoeffdingTreeClassifier):
         stop_mem_management: bool = False,
         remove_poor_attrs: bool = False,
         merit_preprune: bool = True,
-        importance_threshold: float = 0.05,
+        importance_threshold: float = 0.02,
         pruner: str = "complete",
         seed: int = None
     ):
