@@ -8,6 +8,7 @@ from river.tree.hoeffding_tree_classifier import HoeffdingTreeClassifier
 from river.tree.hoeffding_adaptive_tree_classifier import HoeffdingAdaptiveTreeClassifier
 
 
+# This code runs the experiments performed for the thesis.
 num_instances = 1000000
 seeds = [40, 41, 42, 43, 44]
 results = {"seed40": {}, "seed41": {}, "seed42": {}, "seed43": {}, "seed44": {}}
@@ -29,7 +30,7 @@ for seed in seeds:
         efdt = EFDT()
         hatc = HoeffdingAdaptiveTreeClassifier(bootstrap_sampling=False, seed=42)
 
-        hpt_sel_05 = HoeffdingPruningTree(importance_threshold=0.05,pruner="selective", seed=42)
+        hpt_sel_05 = HoeffdingPruningTree(importance_threshold=0.05, pruner="selective", seed=42)
         hpt_sel_02 = HoeffdingPruningTree(importance_threshold=0.02, pruner="selective", seed=42)
         hpt_sel_00 = HoeffdingPruningTree(importance_threshold=0, pruner="selective", seed=42)
 
